@@ -1,1 +1,24 @@
 A simple TO-DO app with minimalistic features
+
+
+
+
+
+
+# DB tables
+CREATE TABLE `to_dos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(80) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `status` enum('unread','unattempted','active','onhold','complete') DEFAULT 'unread',
+  `priority` int(11) DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `deadline` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)
+
+ CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(80) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)
