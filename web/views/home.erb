@@ -1,0 +1,14 @@
+<html>
+<body>
+<h1>To Do</h2>
+<% i = 0 %>
+<% to_do.each{ | t |  %>
+	<%i +=1 %>
+	<h2> <%=i%> </h2>
+	<h3><%=t.description%> 
+  <h4> Created on <%= t.created_on%></h4>
+  <h4> Deadline on <%= t.deadline%></h4>
+<%} %>
+</body>
+</html>
+
