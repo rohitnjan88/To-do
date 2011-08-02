@@ -1,5 +1,87 @@
 <html>
 <body>
+<script type="application/processing">
+// Global variables
+float radius1 = 100.0;
+float radius2 = 120.0;
+int X, Y;
+int nX, nY;
+int delay = 5;
+var bubbles = [];
+var Bubble = function(r1,r2){
+	this.radius1  = r1;
+	this.radius2  = r2;
+	this.x = 0;
+	this.y = 0;
+	this.draw_bubble = function(){
+			fill( 0,121,184);  //fill color blue of bigger bubble 
+			ellipse( this.x,this.y, this.radius2, this.radius2 );                  
+			fill(255);  //fill inner white 
+			ellipse( this.x,this.y, this.radius1, this.radius1 );                  
+	};
+	this.move = function(){
+		// neear the faces of the wall 
+		// find the angle with the wall and bounce in opp direction	
+		if ((this.x + radius2) >=width){
+			;
+		}
+		this.y =this.y + 5; 
+	};
+	this.collide = function(){
+	
+  }
+}; 
+
+// Setup the Processing Canvas
+void setup(){
+  size( 1000,400 );
+  strokeWeight( 1 );
+  frameRate( 30 );
+  radius1 = 100 + sin( frameCount / 2 );
+  radius2 = 105 + sin( frameCount / 2 );
+  for (var i=1 ; i < 2 ; i++){ 
+  	bubbles[i] = new Bubble(radius1,radius2);
+	} 	 
+}
+
+// Main draw loop
+void draw(){
+  
+  
+  // Track circle to new destination
+  X+=(nX-X)/delay;
+  Y+=(nY-Y)/delay;
+  
+  X1=300;
+  Y1=300;
+  // Fill canvas grey
+  //background( 100 );
+  // Fill canvas white
+  background( 255 );
+   
+   
+  for (var i=1 ; i < 2 ; i++){ 
+		bubbles[i].move();
+	} 	 
+
+  for (var i=1 ; i < 2 ; i++){ 
+		bubbles[i].draw_bubble();
+	} 	 
+
+//  	b2 = new Bubble(radius1,radius2);
+   //b1.draw_bubble(300,300);
+	//  b2.draw_bubble(X,Y);
+}
+
+
+// Set circle's next destination
+void mouseMoved(){
+  nX = mouseX;
+  nY = mouseY;  
+}
+
+</script><canvas width="1000px" height="400px"></canvas>
+<pre> </pre>
 <h1>To Do</h2>
 <% i = 0 %>
 <% to_do.each{ | t |  %>
