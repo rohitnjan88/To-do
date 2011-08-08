@@ -1,0 +1,14 @@
+ .loginbox {
+    border : 2px solid #CCCCCC;
+		float: right;
+		height: auto;
+    margin: 50px;
+    min-height: 500px;
+    padding: 30px;
+    width: 18%;
+} 
+.loginimage{
+    float: left ;
+		margin : 20px;
+		margin-left: 100px;
+ } 

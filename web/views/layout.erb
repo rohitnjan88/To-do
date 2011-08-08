@@ -1,12 +1,20 @@
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="/css/todo.css" />
 <script language="javascript" src="processing.init.js"></script>
 <script language="javascript" src="processing-1.2.3.js"></script>
 <script language="javascript" src="processing.init.js"></script>
 <script language="javascript" src="processing.js"></script>
+<script language="javascript" src="processing.js"></script>
 </head>
-<body bgcolor = "#c47451">
+<body >
 <%= yield %>
 </body>
 </html>
+
+<script>
+$(document).ready(function(){
+  $(".loginbox").corner();
+});
+</script>
 

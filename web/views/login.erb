@@ -1,11 +1,28 @@
 <html>
-<body background='bgimage.jpg'>
-<h1> This is the login page in development </h1>
-<form name = "login" action = "/login" method = "post" >
-Username <input type = "text" value="" name="username"/><br /><br />
-Password <input type = "text" value="" name="password"/>
-<form>
- <input type = "submit" value="login" />
+<head>
+  <script language="javascript" src="/jquery-1.6.2.min.js"></script>
+  <script language="javascript" src="/jquery-1.6.2.js"></script>
+  <script language="javascript" src="/jquery.corner.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/todo.css" />
+</head>
+<body >
+	<h1> This is the login page in development </h1>
+  <div class = "loginimage">
+		<img src = "bgimage.jpg" />
+  </div>
+	<div class="loginbox">
+		<form name = "login" action = "/login" method = "post" >
+      <br /><br />
+			Username <input type = "text" value="" name="username"/><br /><br />
+			Password <input type = "text" value="" name="password"/><br /><br />
+ 			<input type = "submit" value="login" />
+		</form>
+	</div>
 </body>
 <html>
 
+<script>
+$(document).ready(function(){
+  $(".loginbox").corner();
+});
+</script>

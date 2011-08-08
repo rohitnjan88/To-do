@@ -2,7 +2,7 @@
 <body>
 <script type="application/processing">
 // Global variables
-int bubble_count = 0;
+int bubble_count = 1;
 int X=500, Y=300;
 int nX=500, nY=300;
 int delay = 5;
@@ -24,7 +24,7 @@ var Bubble = function(r){
 
 // Setup the Processing Canvas
 void setup(){
-  size( 1800,800 );
+  size(1800,800  );
   strokeWeight( 10 );
   frameRate( 30 );
   radius = 100 + sin( frameCount / 2 );
@@ -64,10 +64,13 @@ void mouseClicked(){
 	X = mouseX;
 	Y = mouseY;
 	bubbles[bubble_count] = new Bubble( radius);
+	alert(bubble_count);
 	bubble_count = bubble_count +1;
 }
-</script><canvas width="1000px" height="400px"></canvas>
+</script><canvas width=1800px height=800px ></canvas>
 <pre> </pre>
+<a href="/create_a_new_todo">CREATE A NEW TODO</a>
+<a href="/logout">logout</a>
 <h1>To Do</h2>
 <% i = 0 %>
 <% to_do.each{ | t |  %>

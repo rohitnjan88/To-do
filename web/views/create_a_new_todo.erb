@@ -1,0 +1,10 @@
+<form action= '/create_a_new_todo' method ='post'>
+Description: <br /> <input type=text size =50 style="height:100px" name="description" /><br />
+Priority: <br /> 
+<select>
+<%(1..10).each{|i| %>
+  <option name="priority" value="<%=i%>"><%=i%></option>
+<%}%>
+</select>
+<br /><input type="submit" value ="Submit"/><br />
+</form>
